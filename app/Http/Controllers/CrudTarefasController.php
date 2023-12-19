@@ -17,7 +17,7 @@ class CrudTarefasController extends Controller
 
       
 
-        return response()->json($tarefa);
+        return response()->json($tarefa, 200);
     }
 
     
@@ -26,6 +26,8 @@ class CrudTarefasController extends Controller
      */
     public function store(TarefasRequest $request)
     {
+
+        
         try {
             $tarefa = Tarefas::create($request->all());
             return response()->json(['message' => 'Tarefa '.$tarefa->id. ' adicionada com sucesso'], 201);
@@ -39,8 +41,13 @@ class CrudTarefasController extends Controller
      */
     public function show(string $id)
     {
-        $tarefa = new TarefaResource(Tarefas::where('id',$id)->first());
-        return response()->json($tarefa, 200);
+        
+        try {
+            $tarefa = new TarefaResource(Tarefas::where('id',$id)->first());
+            return response()->json($tarefa, 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Erro ao mostrar tarefa', 'message' => $e->getMessage()], 404);
+        }
     }
 
 
