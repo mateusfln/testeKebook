@@ -9,7 +9,7 @@ use App\Models\Tarefas;
 class CrudTarefasController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * método para listar todos as tarefas.
      */
     public function index()
     {
@@ -22,28 +22,28 @@ class CrudTarefasController extends Controller
 
     
     /**
-     * Store a newly created resource in storage.
+     * método para criar novas tarefas.
      */
     public function store(TarefasRequest $request)
     {
 
-        
+        //try catch para detectar possiveis erros
         try {
             $tarefa = Tarefas::create($request->all());
-            return response()->json(['message' => 'Tarefa '.$tarefa->id. ' adicionada com sucesso'], 201);
+            return response()->json(['message' => 'Tarefa '.$tarefa->id. ' adicionada com sucesso'], 201); // status de sucesso
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Erro ao adicionar tarefa', 'message' => $e->getMessage()], 404);
+            return response()->json(['error' => 'Erro ao adicionar tarefa', 'message' => $e->getMessage()], 404);// status de erro
         }
     }
 
     /**
-     * Display the specified resource.
+     * método para mostrar uma tarefa especifica.
      */
     public function show(string $id)
     {
         
         try {
-            $tarefa = new TarefaResource(Tarefas::where('id',$id)->first());
+            $tarefa = new TarefaResource(Tarefas::where('id',$id)->first());//resource para filtrar os dados e facilitar o entendimento das informações fornecidas pela api
             return response()->json($tarefa, 200);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao mostrar tarefa', 'message' => $e->getMessage()], 404);
@@ -52,7 +52,7 @@ class CrudTarefasController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * método para alterar a descrição de uma tarefa.
      */
     public function update(TarefasRequest $request, string $id)
     {
@@ -65,7 +65,7 @@ class CrudTarefasController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * método para deletar uma tarefa especifica.
      */
     public function destroy(string $id)
     {
@@ -73,6 +73,6 @@ class CrudTarefasController extends Controller
 
         
 
-        return response()->json(['message' => 'Tarefa '.$id. ' deletada com sucesso'], 200);
+        return response()->json(['message' => 'Tarefa '.$id. ' deletada com sucesso'], 200); //feedback para o usuario de que a ação ocorreu com sucesso
     }
 }

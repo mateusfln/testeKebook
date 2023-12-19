@@ -15,17 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Listar todos os produtos
+// Listar todas as tarefas
 Route::get('/tarefas', [CrudTarefasController::class, 'index']);
 
-// Mostrar um produto específico
+// Mostrar uma tarefa específica
 Route::get('/tarefas/{id}', [CrudTarefasController::class, 'show']);
 
-// Criar um novo produto
+// Criar uma nova tarefa
 Route::post('/tarefas', [CrudTarefasController::class, 'store']);
 
-// Atualizar um produto
+// Atualizar uma tarefa
 Route::put('/tarefas/{id}', [CrudTarefasController::class, 'update']);
 
-// Excluir um produto
+// Excluir uma tarefa
 Route::delete('/tarefas/{id}', [CrudTarefasController::class, 'destroy']);
