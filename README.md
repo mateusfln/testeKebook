@@ -8,8 +8,27 @@ API de Tarefas, desenvolvida em PHP com o framework Laravel. Esta API fornece op
 ### Configuração
 Antes de começar a usar a API, certifique-se de seguir as etapas de configuração abaixo:
 
+### Clone do projeto:
+Para rodar o projeto localmente, você irá precisar clonar ele em seu computador. Abra o terminal de comando e rode o seguinte comando:
+
+```
+$git clone https://github.com/mateusfln/testeKebook.git
+```
+Depois de clonar o projeto, entre na pasta do teste:
+
+```
+$cd testeKebook
+```
+
+Abra o projeto com sua ide, caso esteja rodando com vsCode:
+
+```
+$code .
+```
+
 ### Instalação de Dependências:
-Certifique-se de ter o Composer instalado e, em seguida, execute o seguinte comando na raiz do projeto para instalar as dependências:
+*Certifique-se de ter o PHP na versão >=8.2 instalado
+ Já dentro da sua IDE na pasta do projeto, execute no terminal o seguinte comando para instalar as dependências:
 
 ```
 $composer install
