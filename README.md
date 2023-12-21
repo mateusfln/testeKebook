@@ -64,8 +64,8 @@ A API estará acessível em http://127.0.0.1:8000 por padrão.
 ## Testando a API
 #### Para testar a API use o Postman ou qualquer outro software que consegue testar API´s.
 ##### Abaixo segue uma collection do Postman para facilitar os testes da API
-link para o arquivo
-
+[link para o arquivo
+](https://github.com/mateusfln/testeKebook/blob/7dc49810f6b02bbfb03c560c422de04069eeede7/collection.json)
 # Endpoints da API
 #### A API oferece os seguintes endpoints para gerenciar tarefas:
 
