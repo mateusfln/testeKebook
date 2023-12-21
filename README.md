@@ -27,16 +27,26 @@ $cd testeKebook
 ```
 $code .
 ```
+```
+$cd testeKebook
+```
 
-### Instalação de Dependências:
-#### **Certifique-se de ter o PHP na versão >=8.2** instalado
- Já dentro da sua IDE na pasta do projeto, execute no terminal o seguinte comando para instalar as dependências:
+### Requisitos minimos necessarios:
+#### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependencias do laravel necessarias.
+#### **https://laravel.com/docs/10.x/deployment#server-requirements**
 
+#### dependencias obrigatorias para rodar o projeto:
+```
+sudo apt install php-sqlite3
+```
+```
+sudo apt install php-curl
+```
 ```
 $composer install
 ```
 
-### Configuração do Banco de Dados:
+## Configuração do Banco de Dados:
 #### Execute as migrations para criar as tabelas do banco de dados:
 
 ```
@@ -44,12 +54,17 @@ $php artisan migrate
 ```
 
 ### Execução do Servidor:
-#### Inicie o servidor embutido do Laravel com o seguinte comando:
+#### Inicie o servidor local do Laravel com o seguinte comando:
 ```
 $php artisan serve
 ```
 
 A API estará acessível em http://127.0.0.1:8000 por padrão.
+
+## Testando a API
+#### Para testar a API use o Postman ou qualquer outro software que consegue testar API´s.
+##### Abaixo segue uma collection do Postman para facilitar os testes da API
+link para o arquivo
 
 # Endpoints da API
 #### A API oferece os seguintes endpoints para gerenciar tarefas:
@@ -95,8 +110,7 @@ Endpoint: **DELETE /api/tarefas/{id}**
 
 **Descrição**: Exclui uma tarefa existente com base no ID fornecido.
 
-## Testando a API
-Para testar a API use o Postman ou qualquer outro software que consegue testar API´s.
+
 
 ## Considerações Finais
 ### Espero que tenham gostado do meu teste. Espero também poder trabalhar e evoluir ao lado da **Kebook**!
