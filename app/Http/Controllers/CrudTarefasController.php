@@ -6,6 +6,8 @@ use App\Http\Requests\TarefasRequest;
 use App\Http\Resources\TarefaResource;
 use App\Models\Tarefas;
 
+use function Symfony\Component\HttpFoundation\isEmpty;
+
 class CrudTarefasController extends Controller
 {
     /**
@@ -15,10 +17,13 @@ class CrudTarefasController extends Controller
     {
         $tarefa = TarefaResource::collection(Tarefas::all());
 
-      
+      if($tarefa->isEmpty()) {
+        return response()->json(['message' => 'Lista de tarefas vazia'], 404);
 
-        return response()->json($tarefa, 200);
     }
+    return response()->json($tarefa, 200);
+}
+
 
     
     /**
@@ -32,7 +37,7 @@ class CrudTarefasController extends Controller
             $tarefa = Tarefas::create($request->all());
             return response()->json(['message' => 'Tarefa '.$tarefa->id. ' adicionada com sucesso'], 201); // status de sucesso
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Erro ao adicionar tarefa', 'message' => $e->getMessage()], 404);// status de erro
+            return response()->json(['error' => 'Erro ao adicionar tarefa'], 422);// status de erro
         }
     }
 
@@ -46,8 +51,9 @@ class CrudTarefasController extends Controller
             $tarefa = new TarefaResource(Tarefas::where('id',$id)->first());//resource para filtrar os dados e facilitar o entendimento das informações fornecidas pela api
             return response()->json($tarefa, 200);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Erro ao mostrar tarefa', 'message' => $e->getMessage()], 404);
+            return response()->json(['error' => 'Erro ao mostrar tarefa'], 400);
         }
+
     }
 
 
@@ -56,12 +62,21 @@ class CrudTarefasController extends Controller
      */
     public function update(TarefasRequest $request, string $id)
     {
+       
+       try{
+
         $tarefa = Tarefas::findOrFail($id);
+
         $tarefa->update($request->all());
 
-       
-
         return response()->json(['message' => 'Tarefa '.$id. ' atualizada com sucesso'], 200);
+
+       }catch (\Exception $e) {
+            return response()->json(['error' => 'Erro ao deletar tarefa',], 404);
+        }
+
+
+
     }
 
     /**
@@ -69,9 +84,11 @@ class CrudTarefasController extends Controller
      */
     public function destroy(string $id)
     {
-        Tarefas::findOrFail($id)->delete();
+        if (!Tarefas::find($id)){
+            return response()->json(['message'=> 'id inexistente'], 404);
+        } 
 
-        
+        Tarefas::find($id)->delete();
 
         return response()->json(['message' => 'Tarefa '.$id. ' deletada com sucesso'], 200); //feedback para o usuario de que a ação ocorreu com sucesso
     }
