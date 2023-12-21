@@ -1,11 +1,37 @@
+# Teste para vaga de Desenvolvedor Laravel Junior Kebook
+API de Tarefas, desenvolvida em PHP com o framework Laravel. Esta API fornece operações básicas CRUD (Create, Read, Update, Delete) para gerenciar tarefas.
+### Descrição do teste
+Desenvolver uma API simples de lista de tarefas utilizando PHP. A API deve permitir a criação, leitura, atualização e exclusão de tarefas.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+
 
 # Documentação Básica da API de Tarefas
 
-## Visão Geral
-### Teste para vaga de Desenvolvedor Laravel Junior Kebook
-API de Tarefas, desenvolvida em PHP com o framework Laravel. Esta API fornece operações básicas CRUD (Create, Read, Update, Delete) para gerenciar tarefas.
-## Descrição do teste
-Desenvolver uma API simples de lista de tarefas utilizando PHP. A API deve permitir a criação, leitura, atualização e exclusão de tarefas.
+## Requisitos necessários:
+#### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependências do laravel necessárias.
+**https://laravel.com/docs/10.x/deployment#server-requirements**
+
+#### Dependências vitais para rodar o projeto:
+```
+sudo apt install php-sqlite3
+```
+```
+sudo apt install php-curl
+```
+```
+composer install
+```
 
 ### Configuração
 Antes de começar a usar a API, certifique-se de seguir as etapas de configuração abaixo:
@@ -30,22 +56,6 @@ code .
 ```
 cd testeKebook
 ```
-
-### Requisitos minimos necessarios:
-#### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependências do laravel necessárias.
-**https://laravel.com/docs/10.x/deployment#server-requirements**
-
-#### Dependências obrigatorias para rodar o projeto:
-```
-sudo apt install php-sqlite3
-```
-```
-sudo apt install php-curl
-```
-```
-composer install
-```
-
 ## Configuração do Banco de Dados:
 #### Execute as migrations para criar as tabelas do banco de dados:
 
@@ -53,7 +63,7 @@ composer install
 php artisan migrate
 ```
 
-### Execução do Servidor:
+## Execução do Servidor:
 #### Inicie o servidor local do Laravel com o seguinte comando:
 ```
 php artisan serve
@@ -66,7 +76,7 @@ A API estará acessível em http://127.0.0.1:8000 por padrão.
 ##### Abaixo segue uma collection do Postman para facilitar os testes da API
 [link para o arquivo
 ](https://github.com/mateusfln/testeKebook/blob/7dc49810f6b02bbfb03c560c422de04069eeede7/collection.json)
-# Endpoints da API
+## Endpoints da API
 #### A API oferece os seguintes endpoints para gerenciar tarefas:
 
 ### 1. Listar Todas as Tarefas
