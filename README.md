@@ -22,12 +22,9 @@ Desenvolver uma API simples de lista de tarefas utilizando PHP. A API deve permi
 #### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependências do laravel necessárias.
 **https://laravel.com/docs/10.x/deployment#server-requirements**
 
-#### Dependências vitais para rodar o projeto:
+#### Dependências extras para rodar o projeto:
 ```
 sudo apt install php-sqlite3
-```
-```
-sudo apt install php-curl
 ```
 ```
 composer install
