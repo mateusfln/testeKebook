@@ -14,28 +14,28 @@ Antes de começar a usar a API, certifique-se de seguir as etapas de configuraç
 #### Para rodar o projeto localmente, você irá precisar clonar ele em seu computador. Abra o terminal de comando e rode o seguinte comando:
 
 ```
-$git clone https://github.com/mateusfln/testeKebook.git
+git clone https://github.com/mateusfln/testeKebook.git
 ```
 #### Depois de clonar o projeto, entre na pasta do teste:
 
 ```
-$cd testeKebook
+cd testeKebook
 ```
 
-#### Abra o projeto com sua ide, caso esteja rodando com vsCode:
+#### Abra o projeto com sua IDE, caso esteja rodando com vsCode:
 
 ```
-$code .
+code .
 ```
 ```
-$cd testeKebook
+cd testeKebook
 ```
 
 ### Requisitos minimos necessarios:
-#### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependencias do laravel necessarias.
-#### **https://laravel.com/docs/10.x/deployment#server-requirements**
+#### **Certifique-se de ter o PHP na versão >=8.2** instalado e as dependências do laravel necessárias.
+**https://laravel.com/docs/10.x/deployment#server-requirements**
 
-#### dependencias obrigatorias para rodar o projeto:
+#### Dependências obrigatorias para rodar o projeto:
 ```
 sudo apt install php-sqlite3
 ```
@@ -43,20 +43,20 @@ sudo apt install php-sqlite3
 sudo apt install php-curl
 ```
 ```
-$composer install
+composer install
 ```
 
 ## Configuração do Banco de Dados:
 #### Execute as migrations para criar as tabelas do banco de dados:
 
 ```
-$php artisan migrate
+php artisan migrate
 ```
 
 ### Execução do Servidor:
 #### Inicie o servidor local do Laravel com o seguinte comando:
 ```
-$php artisan serve
+php artisan serve
 ```
 
 A API estará acessível em http://127.0.0.1:8000 por padrão.
