@@ -23,13 +23,11 @@ class TarefasRequest extends FormRequest
     {
         return [
             "descricao"=> "required",
-            "concluida"=> "required",
+            "concluida"=> "required|boolean",
         ];
     }
     public function messages(){
         return [
-            "descricao.required"=> "o campo descricao é obrigatorio",
-            "concluida.required"=> "o campo concluida é obrigatorio"
         ];
     }
 }

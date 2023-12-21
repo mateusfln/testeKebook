@@ -27,5 +27,8 @@ Route::post('/tarefas', [CrudTarefasController::class, 'store']);
 // Atualizar uma tarefa
 Route::put('/tarefas/{id}', [CrudTarefasController::class, 'update']);
 
+// Mudar o status de uma tarefa
+Route::put('/tarefas/{id}/changeStatus', [CrudTarefasController::class, 'changeStatus']);
+
 // Excluir uma tarefa
 Route::delete('/tarefas/{id}', [CrudTarefasController::class, 'destroy']);
