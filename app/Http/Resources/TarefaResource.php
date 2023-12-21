@@ -14,10 +14,19 @@ class TarefaResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
+        $status = $this->concluida;
+        if ($status == true) {
+            $status = "Tarefa Concluida";
+        }else{
+            $status = "Tarefa não Concluida";
+        }
+        $descricao = $this->descricao;
+
         return [
             "id"=> $this->id,
-            "descricao"=> $this->descricao,
-            "concluida"=> $this->concluida,
+            "descricao"=> $descricao,
+            "concluida"=> $status,
             
         ];
     }
